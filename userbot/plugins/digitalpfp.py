@@ -3,24 +3,26 @@ syntax: .digitalpfp
 """
 # modified by @mrconfused don't edit credits
 
-from telethon import events
 import asyncio
+import os
+import random
+import re
+import shutil
 import time
-from telethon.tl import functions
-from telethon.errors import FloodWaitError
-import pybase64
+import urllib
 from datetime import datetime
+from time import sleep
+
+import pybase64
+import requests
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
-import shutil
-import requests
-import re
-import random
-import urllib
-import os
-from time import sleep
-from userbot.utils import admin_cmd
+from telethon import events
+from telethon.errors import FloodWaitError
+from telethon.tl import functions
+
 from userbot import CMD_HELP
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="digitalpfp"))
