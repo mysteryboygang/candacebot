@@ -33,8 +33,7 @@ async def main(event):
     cat = str(
         pybase64.b64decode(
             "aHR0cHM6Ly90ZWxlZ3JhLnBoL2ZpbGUvYWVhZWJlMzNiMWYzOTg4YTBiNjkwLmpwZw=="
-        )
-    )[2:51]
+        ))[2:51]
     downloaded_file_name = "userbot/digital_pic.png"
     downloader = SmartDL(cat, downloaded_file_name, progress_bar=True)
     downloader.start(blocking=False)
@@ -46,26 +45,23 @@ async def main(event):
         img = Image.open(poto)
         drawn_text = ImageDraw.Draw(img)
         cat = str(
-            pybase64.b64decode("dXNlcmJvdC9oZWxwZXJzL3N0eWxlcy9kaWdpdGFsLnR0Zg==")
-        )[2:36]
+            pybase64.b64decode(
+                "dXNlcmJvdC9oZWxwZXJzL3N0eWxlcy9kaWdpdGFsLnR0Zg=="))[2:36]
         fnt = ImageFont.truetype(cat, 200)
         drawn_text.text((350, 100), current_time, font=fnt, fill=(124, 252, 0))
         img.save(poto)
         file = await event.client.upload_file(poto)
         await event.client(
             functions.photos.DeletePhotosRequest(
-                await event.client.get_profile_photos("me", limit=1)
-            )
-        )
+                await event.client.get_profile_photos("me", limit=1)))
         await event.client(functions.photos.UploadProfilePhotoRequest(file))
         os.remove(poto)
         await asyncio.sleep(60)
 
 
-CMD_HELP.update(
-    {
-        "digitalpfp": "`.digitalpfp`\
+CMD_HELP.update({
+    "digitalpfp":
+    "`.digitalpfp`\
 \nUSAGE:Your profile pic changes to digitaltime profile picutre \
 "
-    }
-)
+})
