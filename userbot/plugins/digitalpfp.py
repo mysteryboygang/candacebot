@@ -2,7 +2,6 @@
 syntax: .digitalpfp 
 """
 # modified by @mrconfused don't edit credits
-
 import asyncio
 import os
 import random
@@ -15,7 +14,9 @@ from time import sleep
 
 import pybase64
 import requests
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 from pySmartDL import SmartDL
 from telethon import events
 from telethon.errors import FloodWaitError
