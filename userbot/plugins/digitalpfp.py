@@ -1,5 +1,5 @@
-""" 
-syntax: .digitalpfp 
+"""
+syntax: .digitalpfp
 """
 # modified by @mrconfused don't edit credits
 import asyncio
